@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amulya's Travel Dream</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f9fc;
+            color: #222;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #00d4ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 span {
+            color: #00d4ff;
+        }
+
+        .hero-content p {
+            font-size: 23px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #00a8cc;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #007c99;
+            transform: scale(1.05);
+        }
+
+        /* About */
+        .about {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .about h2,
+        .destinations h2,
+        .dream h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            color: #007c99;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        /* Destinations */
+        .destinations {
+            padding: 80px 8%;
+            background: white;
+            text-align: center;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-size: 25px;
+            color: #007c99;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Dream Section */
+        .dream {
+            padding: 90px 10%;
+            text-align: center;
+            background: linear-gradient(135deg, #00a8cc, #005bea);
+            color: white;
+        }
+
+        .dream h2 {
+            color: white;
+        }
+
+        .dream p {
+            font-size: 21px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content h1 {
+                font-size: 45px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">🌍 Amulya Travels</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#places">Places</a></li>
+            <li><a href="#dream">My Dream</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hello, I'm <span>Amulya</span> 🌎</h1>
+            <p>JIT Student | Future World Traveller ✈️</p>
+            <a href="#places" class="btn">Explore My Dream</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Me 👩‍🎓</h2>
+
+        <p>
+            Hi! My name is <strong>Amulya</strong>.
+            I am currently studying at <strong>JIT</strong>.
+            One of my biggest goals in life is to travel around the world
+            and experience the most beautiful places, cultures, food and
+            adventures that our planet has to offer.
+        </p>
+    </section>
+
+    <!-- Destinations -->
+    <section class="destinations" id="places">
+        <h2>My Dream Destinations 🌍</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80"
+                     alt="Paris">
+                <div class="card-content">
+                    <h3>🇫🇷 Paris</h3>
+                    <p>
+                        I want to see the Eiffel Tower and experience
+                        the beauty and culture of Paris.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=80"
+                     alt="Italy">
+                <div class="card-content">
+                    <h3>🇮🇹 Italy</h3>
+                    <p>
+                        Italy is on my dream list for its beautiful cities,
+                        history, food and amazing landscapes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80"
+                     alt="Japan">
+                <div class="card-content">
+                    <h3>🇯🇵 Japan</h3>
+                    <p>
+                        I would love to explore Japan, its technology,
+                        traditions, temples and beautiful scenery.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=800&q=80"
+                     alt="Travel">
+                <div class="card-content">
+                    <h3>🏔️ Switzerland</h3>
+                    <p>
+                        Switzerland is a dream destination because of
+                        its mountains, lakes and breathtaking views.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80"
+                     alt="Bali">
+                <div class="card-content">
+                    <h3>🌴 Bali</h3>
+                    <p>
+                        I want to enjoy Bali's beaches, nature,
+                        peaceful atmosphere and adventures.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=800&q=80"
+                     alt="Australia">
+                <div class="card-content">
+                    <h3>🇦🇺 Australia</h3>
+                    <p>
+                        Australia is another dream destination for its
+                        beaches, wildlife and incredible landscapes.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Dream Section -->
+    <section class="dream" id="dream">
+        <h2>My Biggest Dream ✈️</h2>
+
+        <p>
+            "I want to travel the world, discover beautiful places,
+            meet new people, experience different cultures and create
+            unforgettable memories. My journey starts with a dream,
+            and one day I will turn that dream into reality!" 🌎❤️
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Amulya | JIT Student | Dream Big • Travel Far 🌍</p>
+    </footer>
+
+</body>
+</html>
